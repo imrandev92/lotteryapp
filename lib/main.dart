@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
+  int x = 12;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body:SafeArea(
-            child: Column(
-              children: [
-                Text('Imran Khan'),
-                Text('Imran Khan'),
-                Text('Imran Khan'),
-                Text('Imran Khan'),
-              ],
-            ),
+        appBar: AppBar(
+          title: Text('My First App imran khan'),
         ),
-      ),
-    );
+        body:SafeArea(
+            child: Center(child: Text(x.toString(), style: TextStyle(fontSize: 50),))
+            ),
+        floatingActionButton: FloatingActionButton(
+          onPressed:(){
+            x++;
+
+            print(x.toString());
+          },
+          child: Icon(Icons.add),
+        ),
+        ),
+      );
   }
 }
 
